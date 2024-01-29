@@ -1,7 +1,6 @@
 ---
 title : '[Crack-Me] Captains Hidden Treasures in JavaScript'
 date : 2024-01-29
-draft : true
 ---
 
 In this post, I'll trying to explain JavaScript reversing basics and approaches with simple crack-me challenge in order to realize inner-workings of typical JS challenge. 
