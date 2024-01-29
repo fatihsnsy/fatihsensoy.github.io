@@ -1,6 +1,6 @@
 ---
 title : '[Crack-Me] Captains Hidden Treasures in JavaScript'
-date : 2024-01-29T18:00:30+03:00
+date : 2024-01-29
 draft : true
 ---
 
