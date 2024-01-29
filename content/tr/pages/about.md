@@ -26,6 +26,6 @@ Hakkımda daha fazla bilgiye sahip olmak veya iletişime geçmek için aşağıd
 
 **Bağlantılar👨‍💻**
 
-- <a href="mailto:{{ site.author.email }}">E-Posta</a>
-- <a href="https://github.com/{{ site.author.github }}">GitHub</a>
-- <a href="https://twitter.com/{{ site.author.twitter }}">Twitter</a>
+- <a href="mailto:contact@fatihsensoy.com">E-Posta</a>
+- <a href="https://github.com/fatihsnsy">GitHub</a>
+- <a href="https://twitter.com/fatihsnsy">Twitter</a>

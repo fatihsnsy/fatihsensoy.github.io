@@ -25,6 +25,6 @@ You can access the links below to have more information about me or to contact m
 
 **Connect With Me**
 
-- <a href="mailto:{{ site.author.email }}">E-Mail</a>
-- <a href="https://github.com/{{ site.author.github }}">GitHub</a>
-- <a href="https://twitter.com/{{ site.author.twitter }}">Twitter</a>
+- <a href="mailto:contact@fatihsensoy.com">E-Mail</a>
+- <a href="https://github.com/fatihsnsy">GitHub</a>
+- <a href="https://twitter.com/fatihsnsy">Twitter</a>
