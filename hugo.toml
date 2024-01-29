@@ -123,7 +123,7 @@ disqusShortname = 'fatihsensoy'
     weight = 30
 
 [Languages.tr.params]
-  sitename = "Awesome hugo blog"
+  sitename = "blog@fatihsnsy"
   defaultColor = "dark" # set color mode: dark, light, auto
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
   # the default value is set to 'auto'.
