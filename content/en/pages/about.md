@@ -5,9 +5,11 @@ comments: false
 toc: false
 ---
 
-Greetings, I'm Fatih Şensoy! I am a Cyber ​​Security researcher who aims to develop and specialize himself in reverse engineering and sub-disciplines. In addition to being curious, focused on overcoming difficult problems and solving problems, I like to do technical research in the field of Computer Science, Cyber Security, Programming and Reverse Engineering develop myself and share what I know.
+Greetings, I am Fatih! 
 
-Areas of my interests and abilities:
+I'm a Security Researcher focused on Reverse Engineering and its sub-disciplines. I have a curious, problem-solving personality and I love to do technical research, improve myself and share what I know in the field of Computer Science, Cybersecurity, Programming and Reverse Engineering.  
+
+Areas I am interested in
 
 - Reverse Engineering
 - Low/Medium Programming

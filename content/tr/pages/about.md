@@ -6,9 +6,11 @@ comments: false
 toc: false
 ---
 
-Selamlar, ben Fatih Şensoy! Tersine mühendislik ve alt disiplerinde kendini geliştirmeyi ve uzmanlaşmayı hedefleyen bir Siber Güvenlik araştırmacısıyım. Meraklı olma, zor problemlerin üstesinden gelme ve sorun çözme odaklı olmamın yanı sıra Bilgisayar Bilimleri, Siber Güvenlik, Programlama ve Tersine Mühendislik alanında teknik araştırmalar yapmayı, kendimi geliştirmeyi ve bildiklerimi paylaşmayı seviyorum.  
+Selamlar, ben Fatih! 
 
-İlgi ve yeteneğimin olduğu alanlar: 
+Tersine mühendislik ve alt disiplerine odaklanmış bir Siber Güvenlik araştırmacısıyım. Meraklı, zor problemlerin üstesinden gelebilen ve sorun çözme odaklı bir kişiliğe sahip olmamın yanı sıra Bilgisayar Bilimleri, Siber Güvenlik, Programlama ve Tersine Mühendislik alanında teknik araştırmalar yapmayı, kendimi geliştirmeyi ve bildiklerimi paylaşmayı seviyorum.  
+
+İlgilendiğim alanlar;
 
 - Tersine Mühendislik
 - Düşük/Orta Seviye Programlama
