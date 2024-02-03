@@ -1,5 +1,5 @@
 ---
-title : '[Crack-Me] Captains Hidden Treasures in JavaScript'
+title : 'Hidden Treasure of Captain in JavaScript'
 date : 2024-01-29
 ---
 
