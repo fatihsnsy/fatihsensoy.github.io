@@ -13,7 +13,7 @@ Binary is a 32-bit ARM executable that use some of the shared libraries. So if I
 
 I already mentioned that my possible analysis strategy. So let's begin analyzing the binary like a real reverse-engineer! When I dragged the binary to IDA for analysis, IDA mentioned that this binary use THUMB and ARM instructions. And after the finishing initial auto-analysis, I jump to `start` procedure of binary. 
 
-<img src="img/img-1.png" title="" alt="" data-align="center">
+<center><img title="" src="img/img-1.png" alt=""></center>
 
 As you can see, `libc` will handle the execution of `init` and `main` functions. Firstly I analyzed `init` function for possible some executions before the main, but I didn't face anything and I decided to look inside `main` function. 
 
@@ -60,55 +60,55 @@ h - i = 0xfa
 
 The only thing left is finding the variable `i` and that showed up before the MD5 calculation procedure. 
 
-<img src="img/img-2.png" title="" alt="" data-align="center">
+<center><img src="img/img-2.png" title="" alt=""></center>
 
 According to the ARM output shown above, `R11` register behaves as the frame-pointer, and the given key argument is located at `R11 + var_84` offset. The length of the key is located the `R11 + var_78` offset. So I already know what size should be the key, it's `9`. 
 
-<img title="" src="img/img-3.png" alt="" data-align="center">
+<center><img title="" src="img/img-3.png" alt="" data-align="center"></center>
 
 So `var_78` holds the value of `9`. According to the calculation, sum of the `R2` and `R3` registers (`R3` holds value of 9, `R2` holds `key[8]` named as `i`) must be equal to `0x82`. We can perform reverse operation of `add` instruction, which is substraction, the `i` variable becomes `0x79`. 
 
-### RSB 
+### RSB
 
 > Reverse Subtract without carry.
->
+> 
 > RSB{S}{*cond*} {*Rd*}, *Rn*, *Operand2*
 > 
 > where:
->
+> 
 > - `S`
->
+>   
 >   is an optional suffix. If S is specified, the condition flags are updated on the result of the operation.
->
+> 
 > - `*cond*`
->
+>   
 >   is an optional condition code.
->
+> 
 > - `*Rd*`
->
+>   
 >   is the destination register.
->
+> 
 > - `*Rn*`
->
+>   
 >   is the register holding the first operand.
->
+> 
 > - `*Operand2*`
->
+>   
 >   is a flexible second operand.
 
 At this section, IDA doesn't show the decompilation properly because **it cannot handle RSB instruction** as it's supposed to be:
 
-<img src="img/img-4.png" alt="image-20240203213140885" />
+<center><img src="img/img-4.png" alt="image-20240203213140885" /></center>
 
 I don't know what is the reason of why IDA cannot handle RSB instruction, but I think this is a bug that was allegedly resolved in 2012 and still exists and I still wonder what lies behind this.  
 
-![image-20240203213810724](img/img-5.png)
+<center><img src="img/img-5.png" alt="" /></center>
 
 This is the reason of why I'm going through reading ARM assembly output on crack-me challenge instead of only looking the generated pseudo-C output, and I'd strongly recommend it :)
 
 I've already found `i` variable (`key[8]`), so I can proceed to locate other variables and complete the proper key calculation in reverse order.  Now that I have the value of `i`, I can substitute it in the equation and get all the values, right? I wish it were that simple. However, if I rely solely on straightforward logic at this point, I won't reach the result because I need to analyze some of the instructions in the ARM set.
 
-<img src="img/img-6.png" title="" alt="" data-align="center">
+<center><img src="img/img-6.png" title="" alt=""></center>
 
 Let's take a look at the output above to find the value of `h`. That procedure basically perform reverse substract with `RSB` instruction and extract the 8-bit value from the result with `UXTB` instruction. But we must keep our mind that only one byte loaded the registers from the characters of key value, so signed operations involved this phase. `R2 - 0x79` should be `0xFA`, but if we assume `R2` is `0x173` we'd be thinking wrong way because, it is not one byte and it cannot be the input because it is not a value in the ASCII table. So we should give the value that lower than `0x79` and then, result turns to negative 0xFFFF thing. We can basically calculate the input the basic math like: 
 
@@ -118,7 +118,7 @@ After that we can find the value of `g` with calculate the `0x2b93 / h`, and thi
 
 We can move the last part of this challenge, calculate the MD5 hash of `3asyp3asy` and perform XOR operation with every single characters in the byte array and construct CyberChef recipe for solution:
 
-<img src="img/img-7.png" title="" alt="" data-align="center">
+<center><img src="img/img-7.png" title="" alt="" data-align="center"></center>
 
 ## Conclusion
 
